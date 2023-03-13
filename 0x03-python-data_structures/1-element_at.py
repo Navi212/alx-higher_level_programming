@@ -10,3 +10,6 @@ def element_at(my_list, idx):
     for i in my_list:
         val = my_list[idx]
         return val
+
+if __name__ == "__main__":
+    element_at(0, 0)
