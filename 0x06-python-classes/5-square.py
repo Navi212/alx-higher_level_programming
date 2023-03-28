@@ -1,51 +1,39 @@
 #!/usr/bin/python3
-class Square():
-    '''
-        Defining a Square
-    '''
+# 5-square.py
+"""Define a class Square."""
 
-    def __init__(self, size=0):
-        '''Initialization of instance attributes
-            Args:
-            size (int): Zero or positve number.
-        '''
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = size
 
-    def area(self):
-        '''Calculates the area
-            Return: The current square area.
-        '''
-        return self.__size * self.__size
+class Square:
+    """Represent a square."""
+
+    def __init__(self, size):
+        """Initialize a new square.
+        Args:
+            size (int): The size of the new square.
+        """
+        self.size = size
 
     @property
     def size(self):
-        return self.__size
+        """Get/set the current size of the square."""
+        return (self.__size)
 
     @size.setter
     def size(self, value):
-        '''Updating the private attributes
-            Args:
-            value (int): Zero or positve number.
-        '''
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+    def area(self):
+        """Return the current area of the square."""
+        return (self.__size * self.__size)
+
     def my_print(self):
-        '''
-            prints in stdout the square with the character # or a new line
-            is size is zero.
-        '''
+        """Print the square with the # character."""
+        for i in range(0, self.__size):
+            [print("#", end="") for j in range(self.__size)]
+            print("")
         if self.__size == 0:
-            print()
-            return
-        for col in range(self.__size):
-            for row in range(self.size):
-                print("#", end="")
-            print()
+            print("")
