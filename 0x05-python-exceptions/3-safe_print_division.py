@@ -11,7 +11,6 @@ def safe_print_division(a, b):
     Returns:
     result of the division
     """
-    
     try:
         res = a / b
 

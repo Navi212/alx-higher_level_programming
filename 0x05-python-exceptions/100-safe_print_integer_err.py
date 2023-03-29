@@ -12,7 +12,6 @@ def safe_print_integer_err(value):
     True - if value has been printed correctly as int
     False - otherwise in stderr preceeded by Exception
     """
-
     try:
         print("{:d}".format(value))
         return (True)
