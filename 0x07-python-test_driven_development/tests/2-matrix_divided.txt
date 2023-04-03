@@ -1,0 +1,124 @@
+==========================================
+How to use ``0-matrix_divided.py`` module.
+==========================================
+
+This library is an easy to use library which supplies
+a function that divides all elements of a matrix and 
+returns a new matrix.
+
+The function is called ``matrix_divided()`` which takes
+2 arguments:
+============
+A).Matrix
+b).Divider(int or float)
+
+Here are the following points to note about our function:
+========================================================
+1).The matrix must be a list of lists of integers or floats.
+2).Each row of the matrix must be of the same size.
+3).The divider must be an integer or float and can't be equal
+to zero
+4.)The new matrix will contain result of the division rounded
+to 2 decimal places.
+
+
+First import the ``2-matrix_divided`` module.
+
+
+Importing into a Python module:
+==============================
+matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+
+
+Importing into a Python interactive shell:
+==========================================
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Usage Examples:
+===============
+
+
+Numbers:
+=======
+::
+
+	>>> new_mat_1 = matrix_divided([[10, 20, 30], [40, 50, 60]], 2)
+	>>> new_mat_1
+	[[5.0, 10.0, 15.0], [20.0, 25.0, 30.0]]
+
+
+
+Numbers and Floating point numbers:
+===================================
+::
+	>>> new_mat_2 = matrix_divided([[5.5, 19, 12.12], [5, 10, 15]], 5)
+	>>> new_mat_2
+	[[1.1, 3.8, 2.42], [1.0, 2.0, 3.0]]
+
+
+
+Floats:
+=======
+::
+	>>> new_mat_3 = matrix_divided([[11.11, 12.12, 12.33, 88.90, 1.3], [22.33, 89.90, 11.23, 77.77, 88.19]], 10)
+	>>> new_mat_3
+	[[1.11, 1.21, 1.23, 8.89, 0.13], [2.23, 8.99, 1.12, 7.78, 8.82]]
+
+
+
+Un-equal sized rows:
+====================
+::
+	>>> new_mat_5 = matrix_divided([[1, 2, 3, 4, 5], [1, 2, 3]], 9)
+	Traceback (most recent call last):
+		...
+	TypeError: Each row of the matrix must have the same size
+
+
+Matrix with Non-matrix argument:
+===============================
+::
+	>>> new_mat_6 = matrix_divided([[1, 2, 3, 4, 5], 11, [1, 2, 3, 4, 5]], 9)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+
+Divider ``div`` with Zero value:
+================================
+::
+	>>> new_mat_7 = matrix_divided([[1, 2, 3, 4, 5], [9, 2, 3, 4, 5]], 0)
+	Traceback (most recent call last):
+		...
+	ZeroDivisionError: division by zero
+
+
+
+Matrix with string as a member:
+===============================
+::
+	>>> new_mat_8 = matrix_divided([[1, 2, 3, 4, 5], ["Hi", 2, 3, 4, 5]], 9)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix  (list of lists) of integers/floats
+
+
+Divider ``div`` with string value:
+=================================
+::
+
+	>>> new_mat_9 = matrix_divided([[8, 8], [2, 9]], "12")
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+
+Matrix with no arguments:
+=========================
+::
+	>>> new_mat_10 = matrix_divided()
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'

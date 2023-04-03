@@ -1,0 +1,60 @@
+===========================
+How to use 0-add_integer.py
+===========================
+
+This library is an easy to use library which supplies
+a function that adds 2 integers or floats.
+The function is called ``add_integer()``.
+
+First import the ``0-add_integer`` module.
+
+
+Importing into a Python module:
+==============================
+add_integer = __import__("0-add_integer").add_integer
+
+
+
+Importing into a Python interactive shell:
+==========================================
+>>> add_integer = __import__("0-add_integer").add_integer
+
+
+Numbers:
+=======
+
+The ``add_integer()`` takes 2 integer arguments
+and returns their sum value as integer.
+The returned value is equivalent to using the operator ``+``.
+
+::
+	>>> add_integer(10, 20)
+	30
+
+	>>> add_integer(5, 10)
+	15
+
+It also works with floating-point values with result casted to
+integer.
+
+::
+
+	>>> add_integer(10.5, 65.8)
+	75
+
+	>>> add_integer(11, 1.9)
+	12
+
+Non-Numbers
+===========
+Because ``+`` is only defined here for mathematical operations
+adding non-number arguments will raise a TypeError Exception
+
+::
+
+>>> add_integer("12", 2)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+
