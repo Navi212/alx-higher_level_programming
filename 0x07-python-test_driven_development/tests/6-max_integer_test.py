@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#6-max_integer_test.py
+# 6-max_integer_test.py
 """
     Unittests for max_integer([...]).
 """
@@ -45,16 +45,6 @@ class TestMaxInteger(unittest.TestCase):
         li = [1.53, 15.5, -9, 15, 6]
         self.assertEqual(max_integer(li), 15.5)
 
-    def test_string(self):
-        """Test a string."""
-        li = "Joe"
-        self.assertEqual(max_integer(li), 'r')
-
-    def test_list_of_strings(self):
-        """Test a list of strings."""
-        li = ["I", "live", "in", "Nigeria"]
-        self.assertEqual(max_integer(li), "name")
-    
     def test_empty_string(self):
         """Test an empty string."""
         self.assertEqual(max_integer(""), None)
