@@ -11,6 +11,7 @@ Example:
 """
 add = __import__("0-add_integer").add_integer
 
+
 def matrix_divided(matrix, div):
     """ Divides all elements of a matrix and returns the new matrix """
     li = all(isinstance(i, list) for i in matrix)
