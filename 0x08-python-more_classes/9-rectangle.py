@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-# 8-rectangle.py
+# 9-rectangle.py
 """
-The module ``8-rectangle`` defines a rectangle
+The module ``9-rectangle`` defines a rectangle
 and number of instances of the class.
 """
 
