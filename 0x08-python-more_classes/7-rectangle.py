@@ -11,8 +11,10 @@ class Rectangle:
 
     Attributes:
         number_of_instances(int) - class attribute.
+        print_symbol(str) - class attribute
     """
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """ Our initializer.
@@ -24,7 +26,6 @@ class Rectangle:
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
-        print_symbol = "#"
 
     @property
     def width(self):
@@ -67,16 +68,15 @@ class Rectangle:
 
     def __str__(self):
         """ Prints a printable rectangle with '#' character. """
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ("")
-        size = "#" * self.__width
-        string = ""
+        print_rec = []
         for i in range(self.__height):
-            if i == self.__height - 1:
-                string += size
-            else:
-                string += (size + "\n")
-        return (string)
+            [print_rec.append(str(self.print_symbol)
+                              ) for j in range(self.__width)]
+            if i != self.__height - 1:
+                print_rec.append("\n")
+        return ("".join(print_rec))
 
     def __repr__(self):
         """ Returns official string representation of method ."""
