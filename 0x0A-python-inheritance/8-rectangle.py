@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-The "8-rectangle" inherits from class BaseGeometry.
+The "8-rectangle" module inherits from class BaseGeometry.
 """
 
 
@@ -17,6 +17,6 @@ class Rectangle(BaseGeometry):
             height(int) - The height of the new rectangle.
         """
         self.integer_validator("width", width)
-        self.__width = width
         self.integer_validator("height", height)
+        self.__width = width
         self.__height = height
