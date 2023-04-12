@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+"""module for read_file
+"""
+
+
 def read_file(filename=""):
-    """Print the contents of a UTF8 text file to stdout."""
-    with open(filename, encoding="utf-8") as f:
-        print(f.read(), end="")
+    """read text file with utf-8
+    """
+    with open(filename, "r", encoding="utf-8") as file_tmp:
+        data_read = file_tmp.read()
+    print(data_read, end="")
