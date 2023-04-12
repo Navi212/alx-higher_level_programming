@@ -1,9 +1,13 @@
 #!/usr/bin/python3
+"""creates an Object from a JSON file
+"""
+
+
 import json
 
 
-def from_json_string(my_str):
+def load_from_json_file(filename):
+    """creates an Object from a “JSON file
     """
-        Converting string into object
-    """
-    return (json.loads(my_str))
+    with open(filename, mode="r") as data_file:
+        return json.load(data_file)
