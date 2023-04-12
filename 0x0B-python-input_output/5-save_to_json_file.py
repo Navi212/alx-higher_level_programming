@@ -1,9 +1,13 @@
 #!/usr/bin/python3
+"""save json file
+"""
+
+
 import json
 
 
-def to_json_string(my_obj):
+def save_to_json_file(my_obj, filename):
+    """write object to text file
     """
-        Converting an object to a json string
-    """
-    return (json.dumps(my_obj))
+    with open(filename, mode="w") as data_file:
+        data_file.write(json.dumps(my_obj))
