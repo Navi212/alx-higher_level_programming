@@ -1,26 +1,55 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
->>> bg.integer_validator("my_int", 12)
->>> bg.integer_validator("width", 89)
->>> bg.integer_validator("width", 8)
->>> bg.integer_validator("width", "l")
+>>> bg.integer_validator("my_int", 1)
+>>> bg.integer_validator("my_int", "HI")
 Traceback (most recent call last):
 	...
-    raise TypeError("{} must be an integer".format(value))
-TypeError: l must be an integer
->>> bg.integer_validator("width", "12")
+TypeError: HI must be an integer
+>>> bg.integer_validator("my_int", -10)
+Traceback (most recent call last):
+ValueError: -10 must be greater than 0
+	...
+>>> bg.integer_validator("my_int", 0)
 Traceback (most recent call last):
 	...
-    raise TypeError("{} must be an integer".format(value))
-TypeError: 12 must be an integer
->>> bg.integer_validator("width", -1)
+ValueError: 0 must be greater than 0
+>>> bg.integer_validator("my_int")
 Traceback (most recent call last):
 	...
-    raise ValueError("{} must be greater than 0".format(value))
-ValueError: -1 must be greater than 0
->>> bg.integer_validator("width", -100)
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+>>> bg.integer_validator()
 Traceback (most recent call last):
 	...
-    raise ValueError("{} must be greater than 0".format(value))
-ValueError: -100 must be greater than 0
-
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> bg.integer_validator("", 1)
+>>> bg.integer_validator(,1)
+	...
+SyntaxError: invalid syntax
+>>> bg.integer_validator("my_int", False)
+Traceback (most recent call last):
+	...
+TypeError: False must be an integer
+>>> bg.integer_validator("my_int", True)
+Traceback (most recent call last):
+	...
+TypeError: True must be an integer
+>>> bg.integer_validator("my_int", None)
+Traceback (most recent call last):
+	...
+TypeError: None must be an integer
+>>> bg.integer_validator("my_int", {1, 2, 3})
+Traceback (most recent call last):
+	...
+TypeError: {1, 2, 3} must be an integer
+>>> bg.integer_validator("my_int", (1, 2, 3))
+Traceback (most recent call last):
+	...
+TypeError: (1, 2, 3) must be an integer
+>>> bg.integer_validator("my_int", [1, 2, 3])
+Traceback (most recent call last):
+	...
+TypeError: [1, 2, 3] must be an integer
+>>> bg.integer_validator("my_int", 00)
+Traceback (most recent call last):
+	...
+ValueError: 0 must be greater than 0
