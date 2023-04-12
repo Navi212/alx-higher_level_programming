@@ -1,5 +1,12 @@
 #!/usr/bin/python3
-def append_write(filename="", text=""):
-    with open(filename, mode="a") as fd:
-        x = fd.write(text)
-    return 
+"""module for json string
+"""
+
+
+import json
+
+
+def from_json_string(my_str):
+    """returns an object (Python data structure) represented by a JSON
+    """
+    return json.loads(my_str)
