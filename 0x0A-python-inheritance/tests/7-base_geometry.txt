@@ -1,35 +1,30 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
->>> bg.integer_validator("my_int", 1)
->>> bg.integer_validator("my_int", "HI")
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("my_int", 2)
+>>> bg.integer_validator("my_int", "a")
 Traceback (most recent call last):
-	...
-TypeError: HI must be an integer
+TypeError: a must be an integer
+>>> bg.integer_validator("my_int", "")
+Traceback (most recent call last):
+TypeError:  must be an integer
 >>> bg.integer_validator("my_int", -10)
 Traceback (most recent call last):
 ValueError: -10 must be greater than 0
-	...
->>> bg.integer_validator("my_int", 0)
+>>> bg.integer_validator("my_int", -1)
 Traceback (most recent call last):
-	...
+ValueError: -1 must be greater than 0
+>>> bg.integer_validator("my_int", 00)
+Traceback (most recent call last):
 ValueError: 0 must be greater than 0
->>> bg.integer_validator("my_int", False)
+>>> bg.integer_validator("my_int", [1, 2, 3])
 Traceback (most recent call last):
-	...
-TypeError: False must be an integer
->>> bg.integer_validator("my_int", True)
-Traceback (most recent call last):
-	...
-TypeError: True must be an integer
->>> bg.integer_validator("my_int", None)
-Traceback (most recent call last):
-	...
-TypeError: None must be an integer
+TypeError: [1, 2, 3] must be an integer
 >>> bg.integer_validator("my_int", {1, 2, 3})
 Traceback (most recent call last):
-	...
 TypeError: {1, 2, 3} must be an integer
->>> bg.integer_validator("my_int", (1, 2, 3))
+>>> bg.integer_validator("my_int", -0)
 Traceback (most recent call last):
-	...
-TypeError: (1, 2, 3) must be an integer
+ValueError: 0 must be greater than 0
+>>> bg.integer_validator("my_int", 1)
+
