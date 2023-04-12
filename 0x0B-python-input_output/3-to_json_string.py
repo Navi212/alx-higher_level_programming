@@ -1,5 +1,12 @@
 #!/usr/bin/python3
-def write_file(filename="", text=""):
-    with open(filename, mode="w") as fd:
-        nbc = fd.write(text)
-    return nbc
+"""module for json string
+"""
+
+
+import json
+
+
+def to_json_string(my_obj):
+    """ json representation of object
+    """
+    return json.dumps(my_obj)
