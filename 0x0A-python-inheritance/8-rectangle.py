@@ -7,7 +7,7 @@ The "8-rectangle" inherits from class BaseGeometry.
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
-class Rectange(BaseGeometry):
+class Rectangle(BaseGeometry):
     """ Defines a class that inherits from BaseGeometry. """
     def __init__(self, width, height):
         """ Initialize a new Rectangle.
