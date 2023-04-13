@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-import json
-
-
 """
 The 4-from_json_string module supplies a function
 from_json_string() that returns an objetc represented
 by a JSON string.
 """
+
+
+import json
 
 
 def from_json_string(my_str):
