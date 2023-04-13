@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""The 8-class_to_json module supplies a function."""
-
-
-import json
+"""class_to_json module"""
 
 
 def class_to_json(obj):
-    """ Returns dict. description for JSON object. """
-    return obj.__dict__
+        """dictionary description of simple data structure
+           for JSON serialization
+        """
+        return obj.__dict__
