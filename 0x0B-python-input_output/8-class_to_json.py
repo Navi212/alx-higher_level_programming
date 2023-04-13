@@ -11,4 +11,4 @@ import json
 
 def class_to_json(obj):
     """ Returns dict. description for JSON sterilation object. """
-    return (obj.__dict__)
+    return obj.__dict__
