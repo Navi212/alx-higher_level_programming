@@ -3,8 +3,8 @@ import json
 
 
 """
-The ``4-from_json_string`` module supplies a function
-``from_json_string()`` that returns an objetc represented
+The 4-from_json_string module supplies a function
+from_json_string() that returns an objetc represented
 by a JSON string.
 """
 
@@ -18,4 +18,4 @@ def from_json_string(my_str):
     Return:
         JSON object.
     """
-    return (json.loads(my_str))
+    return json.loads(my_str)
