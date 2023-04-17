@@ -75,6 +75,21 @@ class Rectangle(Base):
                 print("#", end="")
             print("")
 
+    def update(self, *args, **kwargs):
+        """ Assigns arguments to each attribute. """
+        if (len(args) == 0):
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+            return
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass
+
     def __str__(self):
         """ Prints a fine print. """
         return ("[Rectangle] ({}) {}/{} - {}/{}"
@@ -91,3 +106,12 @@ class Rectangle(Base):
         elif (attr == "x" or attr == "y"):
             if (value < 0):
                 raise ValueError("{} must be >= 0".format(attr))
+
+    def to_dictionary(self):
+        """ Returns the dict. representation of a Rectangle. """
+        return {
+                "id": self.id,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y
+                }
