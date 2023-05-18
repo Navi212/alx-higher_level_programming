@@ -1,5 +1,5 @@
--- A script that updates the attribute value of a table
--- Updates the score of Bob to 10 in the table second_table
+-- A script that updates the score of Bob to 10 in the second_table using only name
+-- Code implementation.
 UPDATE second_table
 SET score = 10
-WHERE name = "Bob"
+WHERE name = "Bob";

@@ -1,3 +1,3 @@
--- A script that deletes a database
--- and should not fail if doesn't exists
+-- A script that deletes the database hbtn_0c_0 from MySQL server
+-- Code implementation.
 DROP DATABASE IF EXISTS hbtn_0c_0;

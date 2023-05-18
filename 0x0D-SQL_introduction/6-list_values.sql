@@ -1,3 +1,4 @@
--- Lists all rows of a table
--- Lists all rows of first_table from the database hbtn_0c_0
-SELECT * FROM first_table;
+-- A script that lists all the rows of the first_table from DB hbtn_0c_0
+-- Code implementation.
+SELECT *
+FROM first_table;
