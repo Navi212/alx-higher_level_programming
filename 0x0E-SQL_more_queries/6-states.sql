@@ -1,6 +1,10 @@
--- Script that creates a database and a table
-CREATE DATABASE -- Query to create database hbtn_0d_usa
-IF NOT EXISTS hbtn_0d_usa;
-CREATE TABLE IF NOT EXISTS hbtn_0d_usa.states ( -- Query to create states table with 2 constraints
-       id INT UNIQUE AUTO_INCREMENT NOT NULL PRIMARY KEY,
-       name VARCHAR(256) NOT NULL);
+-- A script that creates the database hbtn_0d_usa and the table states (DB hbtn_0d_usa)
+-- states description:
+--      id INT unique, auto generated, can’t be null and is a primary key
+--      name VARCHAR(256) can’t be null
+-- If the database hbtn_0d_usa already exists, your script should not fail
+-- If the table states already exists, your script should not fail
+CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
+CREATE TABLE IF NOT EXISTS hbtn_0d_usa.states (
+	id INT UNIQUE AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	name VARCHAR(256) NOT NULL);
