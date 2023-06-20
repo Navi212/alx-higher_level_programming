@@ -19,9 +19,9 @@ if __name__ == "__main__":
                 """
                 SELECT *
                 FROM states
-                WHERE `name` LIKE '{}'
+                WHERE `name` LIKE %s
                 ORDER BY states.id ASC
-                """.format(argv[4]))
+                """, (argv[4],))
             result = cur.fetchall()
             for names in result:
                 print(names)
