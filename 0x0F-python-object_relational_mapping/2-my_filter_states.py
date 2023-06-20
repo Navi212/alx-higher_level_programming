@@ -18,7 +18,7 @@ if __name__ == "__main__":
             """
             SELECT *
             FROM states
-            WHERE `name` LIKE '{}'
+            WHERE BINARY `name` = '{}'
             ORDER BY states.id ASC""".format(argv[4]))
         result = cur.fetchall()
         for names in result:
