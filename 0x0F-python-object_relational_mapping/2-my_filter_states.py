@@ -17,8 +17,8 @@ if __name__ == "__main__":
         cur.execute("""
             SELECT *
             FROM states
-            WHERE `name` LIKE '{}%'
-            ORDER BY states.id ASC""".format(argv[4]))
+            WHERE `name` LIKE '{}'
+            ORDER BY states.id ASC;""".format(argv[4]))
         result = cur.fetchall()
         for names in result:
             print(names)
