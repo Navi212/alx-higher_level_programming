@@ -1,18 +1,27 @@
 #!/usr/bin/python3
-"""
-List all cities of a state
-"""
-import sys
-import MySQLdb
 
-if __name__ == '__main__':
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
-                         db=sys.argv[3], port=3306)
+if __name__ == "__main__":
+    import MySQLdb
+    from sys import argv
 
-    cur = db.cursor()
-    cur.execute("SELECT cities.id, cities.name, states.name \
-    FROM cities JOIN states ON cities.state_id = states.id \
-    WHERE states.name = '{}';".format(sys.argv[4]))
-    states = cur.fetchall()
-
-    print(", ".join([state[1] for state in states]))
+    try:
+        conn = MySQLdb.connect(user=argv[1],
+                               passwd=argv[2], db=argv[3], port=3306)
+        with conn.cursor() as cur:
+            cur.execute(""" \
+                    SELECT cities.name \
+                    FROM cities \
+                    JOIN states \
+                    ON states.id = cities.state_id \
+                    WHERE states.name = '{}' \
+                    ORDER BY cities.id ASC""".format(argv[4]))
+            result = cur.fetchall()
+            li_cities = []
+            for cities in result:
+                li_cities.append(cities[0])
+            print(", ".join(li_cities))
+    except Exception as e:
+        print(f"Error: {e}")
+    finally:
+        cur.close()
+        conn.close()
