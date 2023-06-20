@@ -14,12 +14,12 @@ if __name__ == "__main__":
         conn = MySQLdb.connect(user=argv[1],
                                passwd=argv[2], db=argv[3], port=3306)
         cur = conn.cursor()
-        cur.execute(""" \
+        cur.execute(" \
                 SELECT * \
                 FROM states \
                 WHERE `name` LIKE 'N%'
                 ORDER BY states.id ASC
-                """)
+                ")
         result = cur.fetchall()
         for names in result:
             print(names)
