@@ -16,12 +16,11 @@ if __name__ == "__main__":
                                passwd=argv[2], db=argv[3], port=3306)
         with conn.cursor() as cur:
             cur.execute("""
-            SELECT *
-            FROM states
-            WHERE `name` LIKE '{}'
-            ORDER BY states.id ASC
-            """.format(argv[4])
-            )
+                SELECT *
+                FROM states
+                WHERE `name` LIKE '{}'
+                ORDER BY states.id ASC
+                """.format(argv[4]))
             result = cur.fetchall()
             for names in result:
                 print(names)
