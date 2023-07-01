@@ -8,7 +8,7 @@ import urllib.request
 
 
 if __name__ == "__main__":
-    url = "http://localhost"
+    url = "https://alx-intranet.hbtn.io/status"
     req = urllib.request.Request(url)
     with urllib.request.urlopen(req) as response:
         req_response = response.read()
