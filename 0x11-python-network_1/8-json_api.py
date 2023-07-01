@@ -31,7 +31,7 @@ if __name__ == "__main__":
         dit = req.json()
         if dit:
             print("({}) {}".format(dit.get("id"), dit.get("name")))
-        else:
+        elif dit == {}:
             print("No result")
     except ValueError:
         print("Not a valid JSON")
