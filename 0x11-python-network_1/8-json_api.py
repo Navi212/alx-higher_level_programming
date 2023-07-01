@@ -2,7 +2,6 @@
 """
 A Python script that takes in a letter and sends a POST request
 to http://0.0.0.0:5000/search_user with the letter as a parameter.
-
     The letter must be sent in the variable q
     If no argument is given, set q=""
     If the response body is properly JSON formatted and not empty,
@@ -31,7 +30,7 @@ if __name__ == "__main__":
         dit = req.json()
         if dit:
             print("({}) {}".format(dit.get("id"), dit.get("name")))
-        elif dit == {}:
+        else:
             print("No result")
     except ValueError:
         print("Not a valid JSON")
