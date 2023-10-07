@@ -1,14 +1,15 @@
 $(function () {
-  $('#add_item').click(function () {
+  $('div#add_item').click(function () {
     $('ul.my_list').append('<li>Item</li>');
   });
-  $('#remove_item').click(function () {
-    let items = $('ul.my_list li');
-    if (items.length > 0) {
-      items[items.length - 1].remove();
+  $('div#remove_item').click(function () {
+    const items = $('ul.my_list li');
+    if (length.items > 0) {
+      last_item = items[items.length - 1];
+      last_item.remove();
     }
   });
-  $('#clear_list').click(function () {
-    $('ul.my_list').empty();
+  $('div#clear_list').click(function () {
+    $('ul.my_list').clear();
   });
 });
